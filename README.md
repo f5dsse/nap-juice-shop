@@ -24,4 +24,4 @@
         nginx_app_protect:
           build: nginx_app_protect
           ports:
-            - "8080:80"
+            - "8081:80"
