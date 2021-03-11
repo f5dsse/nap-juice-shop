@@ -19,7 +19,7 @@
 
         docker-compose up -d
         
-5. Initialize the Kibana dashboards (just copy/paste into terminal in the 'nap-juice-shop' directory. This will eventually be integrated into docker-compose)
+5. Initialize the Kibana dashboards. (Just copy/paste into terminal in the 'nap-juice-shop' directory. Need to integrate into docker-compose, see comment on [line 4](https://github.com/f5dsse/nap-juice-shop/blob/main/elk/f5-dashboards/entrypoint.sh))
 
         KIBANA_URL=https://localhost:5601
         jq -s . kibana/overview-dashboard.ndjson | jq '{"objects": . }' | \
