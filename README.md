@@ -25,3 +25,5 @@
           build: nginx_app_protect
           ports:
             - "8080:80"
+7. Check out the dashboard and review the logs at http://localhost:5601
+![image](https://user-images.githubusercontent.com/31410972/110743712-577d6500-81ed-11eb-8ef7-4fca6a271945.png)
