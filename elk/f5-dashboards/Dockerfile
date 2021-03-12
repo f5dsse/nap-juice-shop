@@ -4,6 +4,7 @@ WORKDIR /app
 ADD . /app
 RUN apk update && apk add jq curl
 
-HEALTHCHECK CMD curl -fsSL "http://elasticsearch:9200/_cat/health?h=status" | grep -E '^yellow'
+ENV KIBANA_URL=http://kibana:5601
+ENV ELASTICSEARCH_URL=http://elasticsearch:9200
 
-CMD ["sh", "/app/entrypoint.sh"]
+CMD ["/app/wait-for-elasticsearch.sh", "${ELASTICSEARCH_URL}", "--", "/app/add-f5-dashboards.sh"]
